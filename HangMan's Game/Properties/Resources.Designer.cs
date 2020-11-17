@@ -61,6 +61,16 @@ namespace HangMan_s_Game.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] HippopotamusApocalypse_Gzly {
+            get {
+                object obj = ResourceManager.GetObject("HippopotamusApocalypse_Gzly", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap stage1 {

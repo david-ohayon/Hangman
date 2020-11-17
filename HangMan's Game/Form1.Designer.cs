@@ -1,6 +1,6 @@
 ﻿namespace HangMan_s_Game
 {
-    partial class Form1
+    partial class HangsManGame
     {
         /// <summary>
         /// Required designer variable.
@@ -58,6 +58,7 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBoxWordToGuess = new System.Windows.Forms.GroupBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -68,7 +69,7 @@
             this.letter3 = new System.Windows.Forms.Label();
             this.letter2 = new System.Windows.Forms.Label();
             this.letter1 = new System.Windows.Forms.Label();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.replayBtn = new System.Windows.Forms.Button();
             this.groupBoxKeyBoard.SuspendLayout();
             this.groupBoxWordToGuess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -425,6 +426,7 @@
             // groupBoxWordToGuess
             // 
             this.groupBoxWordToGuess.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBoxWordToGuess.Controls.Add(this.replayBtn);
             this.groupBoxWordToGuess.Controls.Add(this.pictureBox);
             this.groupBoxWordToGuess.Controls.Add(this.label10);
             this.groupBoxWordToGuess.Controls.Add(this.label9);
@@ -442,7 +444,17 @@
             this.groupBoxWordToGuess.Size = new System.Drawing.Size(833, 360);
             this.groupBoxWordToGuess.TabIndex = 28;
             this.groupBoxWordToGuess.TabStop = false;
-            this.groupBoxWordToGuess.Text = "groupBox2";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox.Location = new System.Drawing.Point(491, 81);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(330, 179);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 10;
+            this.pictureBox.TabStop = false;
             // 
             // label10
             // 
@@ -539,18 +551,20 @@
             this.letter1.TabIndex = 0;
             this.letter1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox
+            // replayBtn
             // 
-            this.pictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox.Location = new System.Drawing.Point(491, 81);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(330, 179);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 10;
-            this.pictureBox.TabStop = false;
+            this.replayBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.replayBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.replayBtn.Location = new System.Drawing.Point(379, 200);
+            this.replayBtn.Name = "replayBtn";
+            this.replayBtn.Size = new System.Drawing.Size(63, 49);
+            this.replayBtn.TabIndex = 27;
+            this.replayBtn.Text = "play";
+            this.replayBtn.UseVisualStyleBackColor = true;
+            this.replayBtn.Visible = false;
+            this.replayBtn.Click += new System.EventHandler(this.Replay);
             // 
-            // Form1
+            // HangsManGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -558,8 +572,8 @@
             this.ClientSize = new System.Drawing.Size(833, 460);
             this.Controls.Add(this.groupBoxWordToGuess);
             this.Controls.Add(this.groupBoxKeyBoard);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "HangsManGame";
+            this.Text = "HangsManGame";
             this.groupBoxKeyBoard.ResumeLayout(false);
             this.groupBoxWordToGuess.ResumeLayout(false);
             this.groupBoxWordToGuess.PerformLayout();
@@ -611,6 +625,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button replayBtn;
     }
 }
 

@@ -4,18 +4,20 @@ using System.Windows.Forms;
 
 namespace HangMan_s_Game
 {
-    public partial class Form1 : Form
+    public partial class HangsManGame : Form
     {
         private int CurrentLabelLetter = 1;
         private string WordToGuess;
         private Image[] Images = new Image[6];
         private int CountError = 0;
         private bool IsFirstPlayer = true;
-        public Form1()
+        private string input;
+
+        public HangsManGame()
         {
             InitializeComponent();
 
-            SetImagesArray();
+            Setup();
         }
         private void InsertLetter(object sender, EventArgs e)
         {
@@ -35,12 +37,20 @@ namespace HangMan_s_Game
             }
             else
             {
-
                 if (WordToGuess.Contains(buttonText))
                 {
                     for (int i = 0; i < WordToGuess.Length; i++)
+                    {
                         if (WordToGuess[i].ToString() == buttonText)
+                        {
                             groupBoxWordToGuess.Controls["letter" + (i + 1)].Text = buttonText;
+                        }
+                    }
+
+                    input = letter1.Text + letter2.Text + letter3.Text + letter4.Text + letter5.Text;
+
+                    if (WordToGuess == input)
+                        replayBtn.Visible = true;
                 }
                 else
                 {
@@ -81,9 +91,14 @@ namespace HangMan_s_Game
             Enter.Enabled = false;
             IsFirstPlayer = false;
         }
-        public void SetImagesArray()
+        public void Setup()
         {
+            replayBtn.Visible = false;
             pictureBox.Size = new Size(330, 179);
+            BackSpace.Visible = true;
+            Enter.Visible = true;
+            BackSpace.Enabled = true;
+            Enter.Enabled = true;
             //מציבה תמונות בכל תאי מערך התמונות
             Images[0] = Properties.Resources.stage1;
             Images[1] = Properties.Resources.stage2;
@@ -91,6 +106,29 @@ namespace HangMan_s_Game
             Images[3] = Properties.Resources.stage4;
             Images[4] = Properties.Resources.stage5;
             Images[5] = Properties.Resources.stage6;
+            pictureBox.Image = null;
+            groupBoxKeyBoard.Enabled = true;
+            for (int i = 0; i < WordToGuess.Length; i++)
+            {
+                groupBoxWordToGuess.Controls["letter" + (i + 1)].Text = "";
+            }
+            IsFirstPlayer = true;
+            for (int i = 1; i <= 26; i++)
+            {
+                groupBoxKeyBoard.Controls["button" + i].Enabled = true;
+            }
+            CurrentLabelLetter = 1;
         }
+
+        private void Replay(object sender, EventArgs e)
+        {
+            Setup();
+        }
+        /*
+הוספת התייחסות למצב שהשחקן השני ניצח
+עיצוב + שינוי פונט
+רקע GIF
+אפשרות ללחוץ על המקלדת ?
+*/
     }
 }
